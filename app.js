@@ -26,7 +26,7 @@ Velo.prototype = Object.create(Vehicule.prototype); // parent's prototype copy
 Velo.prototype.constructor = Velo;
 
 function Voiture(couleur, roues, marque, assurance, proprietaire){
-    Vehicule.call(couleur, roues, marque);
+    Vehicule.call(this ,couleur , roues, marque);
     this.assur = assurance;
     this.owner = proprietaire;
 
