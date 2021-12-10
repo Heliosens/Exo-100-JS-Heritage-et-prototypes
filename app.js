@@ -22,6 +22,21 @@ function Velo (couleur, roues, marque, rayonRoues, typePeinture){
     }
 }
 
+Velo.prototype = Object.create(Vehicule.prototype); // parent's prototype copy
+Velo.prototype.constructor = Velo;
+
+function Voiture(couleur, roues, marque, assurance, proprietaire){
+    Vehicule.call(couleur, roues, marque);
+    this.assur = assurance;
+    this.owner = proprietaire;
+
+    this.wash = function (){
+        console.log('je lave la voiture');
+    }
+}
+
+Voiture.prototype = Object.create(Vehicule.prototype);
+Voiture.prototype.constructor = Voiture;
 
 let car_01 = new Vehicule("noir", "4", "renault");
 car_01.demarrer();
